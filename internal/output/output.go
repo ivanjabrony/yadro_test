@@ -33,7 +33,7 @@ func CalculateOutput(cfg *config.Config, output io.Writer, personData map[int]*c
 	for id, competitor := range personData {
 		err := competitors.ValidateCompetitor(competitor)
 		if err != nil {
-			_, _ = output.Write([]byte(fmt.Sprintf("Competitor(%v) has invalid data", id)))
+			_, _ = fmt.Fprintf(output, "Competitor(%v) has invalid data", id)
 			continue
 		}
 

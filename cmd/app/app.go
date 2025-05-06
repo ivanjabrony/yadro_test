@@ -26,5 +26,5 @@ func New(eventPath, configPath, outputPath string) App {
 }
 
 func (app *App) Run() {
-	app.eo.RunFromFile(app.eventPath)
+	_ = app.eo.RunFromFile(app.eventPath)
 }
